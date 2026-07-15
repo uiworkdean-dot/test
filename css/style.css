@@ -1,0 +1,1823 @@
+/* ============================================================
+   Dutyfreeupgrade - Main Stylesheet
+   Prefix: dfu- (DutyFreeUpgrade)
+   RWD Breakpoints: 1440, 1024, 768, 500
+   ============================================================ */
+
+/* ---------- Reset & Base ---------- */
+.dfu-wrap *,
+.dfu-wrap *::before,
+.dfu-wrap *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.dfu-wrap {
+  font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+  background-color: #f0e8f5;
+}
+
+/* .dfu-wrap 內所有一般連結：黑字 + 底線 */
+.dfu-wrap a:not([class*="dfu-btn"]):not([class*="dfu-product-item"]) {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dfu-wrap a:not([class*="dfu-btn"]):not([class*="dfu-product-item"]):hover {
+  opacity: 0.65;
+}
+
+/* ---------- Section Common ---------- */
+.dfu-section {
+  width: 100%;
+  position: relative;
+}
+
+/* 1. 建立獨立的中層底紋 (在漸層之上，內容之下) */
+.dfu-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/deco-pattern.png');
+  background-repeat: repeat;
+  background-size: 1900px 60px;
+  /* 依照你的原始設定 */
+  z-index: 0;
+  pointer-events: none;
+
+  /* 加入這行：讓背景鎖定在視窗 */
+  background-attachment: fixed;
+}
+
+/* 2. 將所有內容物提升到頂層 */
+.dfu-section>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Section Background Gradients ---------- */
+/* 移除原本的 url()，僅保留漸層色作為底層 */
+.dfu-section--kv {
+  background-image: linear-gradient(180deg, rgba(10, 197, 251, 0.92) 0%, rgba(10, 197, 251, 0.92) 70%, rgba(252, 206, 225, 0.92) 100%);
+}
+
+.dfu-section--benefits {
+  background-image: linear-gradient(180deg, rgba(252, 206, 225, 0.88) 0%, rgba(252, 206, 225, 0.88) 100%);
+}
+
+.dfu-section--preorder {
+  background-image: linear-gradient(180deg, rgba(252, 206, 225, 0.88) 0%, rgba(10, 197, 251, 0.88) 30%, rgba(10, 197, 251, 0.88) 70%, rgba(252, 206, 225, 0.88) 100%);
+}
+
+.dfu-section--guide {
+  background-image: linear-gradient(180deg, rgba(252, 206, 225, 0.88) 0%, rgba(252, 206, 225, 0.88) 100%);
+}
+
+.dfu-section--mustbuy {
+  background-image: linear-gradient(180deg, rgba(252, 206, 225, 0.88) 0%, rgba(10, 197, 251, 0.88) 30%, rgba(10, 197, 251, 0.88) 70%, rgba(252, 206, 225, 0.88) 100%);
+}
+
+.dfu-section--locations {
+  background-image: linear-gradient(180deg, rgba(252, 206, 225, 0.88) 0%, rgba(252, 206, 225, 0.88) 100%);
+}
+
+.dfu-section--faq {
+  background-image: linear-gradient(180deg, rgba(252, 206, 225, 0.88) 0%, rgba(10, 197, 251, 0.88) 30%, rgba(10, 197, 251, 0.88) 70%, rgba(252, 206, 225, 0.88) 100%);
+}
+
+.dfu-section--products {
+  background-image: linear-gradient(180deg, rgba(252, 206, 225, 0.88) 0%, rgba(252, 206, 225, 0.88) 100%);
+}
+
+/* ---------- Container ---------- */
+.dfu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ============================================================
+   SECTION 1: KV Banner
+   ============================================================ */
+.dfu-kv {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.dfu-kv__img {
+  width: 100%;
+  display: block;
+}
+
+/* KV picture 元素：PC/Mobile 切換完全由 <source media> 屬性處理
+   不可對 picture 元素設 display:none，否則手機版整張消失 */
+.dfu-kv__img--pc {
+  display: block;
+  width: 100%;
+}
+
+.dfu-kv__img--pc img {
+  width: 100%;
+  display: block;
+}
+
+
+/* ============================================================
+   SECTION 2: Benefits 可享有四大好處
+   ============================================================ */
+.dfu-benefits {
+  padding: 50px 0 60px;
+}
+
+.dfu-section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background: #fff37e;
+  font-size: 28px;
+  font-weight: 700;
+  padding: 10px 25px;
+  border-radius: 30px;
+  margin-bottom: 12px;
+  border: 2.5px solid #000;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: #222;
+}
+
+.dfu-section-badge__accent {
+  color: #ff1a5e;
+}
+
+.dfu-section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.dfu-section-title-wrap::before,
+.dfu-section-title-wrap::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: #333333;
+  display: block;
+}
+
+.dfu-section-title {
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 0;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  white-space: nowrap;
+  -webkit-text-stroke: 5px #000000;
+  paint-order: stroke fill;
+  text-shadow: 5px 5px 0 #000000;
+}
+
+.dfu-section-title__yellow {
+  color: #fff37e;
+  -webkit-text-stroke: 5px #000000;
+  paint-order: stroke fill;
+  text-shadow: 5px 5px 0 #000000;
+}
+
+.dfu-benefits__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dfu-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dfu-benefit-card {
+  background: #fff;
+  background-image: url(../images/benefit-card-bg.png);
+  background-size: auto;
+  background-position: center;
+  border-radius: 50px;
+  border: 2.5px solid #000;
+  box-shadow: 0 20px 0px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  text-align: left;
+  position: relative;
+  margin-top: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dfu-benefit-card__icon {
+  display: none;
+}
+
+.dfu-benefit-card__title {
+  background: #b89edf;
+  background-image: url(../images/benefit-card-title-bg.png);
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 25px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 2.5px solid #000;
+  border-radius: 48px 48px 0 0;
+  position: relative;
+}
+
+.dfu-benefit-card__title::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  background: #ffafda;
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 5px 20px;
+  border-radius: 999px;
+  border: 2.5px solid #000;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  z-index: 2;
+}
+
+.dfu-benefit-card__title span {
+  display: block;
+  font-size: 32px;
+  font-weight: 900;
+  color: #fff37e;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-align: center;
+  -webkit-text-stroke: 2.5px #000;
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0 #000;
+}
+
+.dfu-benefit-card__desc {
+  font-size: 16px;
+  color: #000;
+  line-height: 1.6;
+  font-weight: 600;
+  padding: 15px 32px 50px;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  /* 文字層級高於裝飾數字 */
+}
+
+/* 右下角裝飾數字
+   - content 從 data-num 屬性讀取（01~04）
+   - font-size 用 vw 單位隨視窗縮放
+   - 半透明紫色，完全不干擾閱讀
+   - pointer-events: none 不攔截任何互動
+*/
+.dfu-benefit-card::after {
+  content: attr(data-num);
+  position: absolute;
+  right: 12px;
+  bottom: -8px;
+  font-size: 4.5vw;
+  font-weight: 900;
+  color: rgba(180, 158, 223, 0.28);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* 中南部加碼優惠 Banner */
+.dfu-benefits-promo {
+  width: 100%;
+  margin: 25px auto 0;
+  border-radius: 50px;
+  border: 2.5px solid #000;
+  box-shadow: 0 20px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  scroll-margin-top: 24px;
+  cursor: pointer;
+}
+
+.dfu-benefits-promo__picture,
+.dfu-benefits-promo__img {
+  display: block;
+  width: 100%;
+}
+
+.dfu-benefits-promo__img {
+  height: auto;
+}
+
+.dfu-benefits-promo:focus-visible {
+  outline: 4px solid #fff37e;
+  outline-offset: 4px;
+}
+
+
+/* ============================================================
+   SECTION 3: Pre-order 出國前45天即可預訂
+   ============================================================ */
+.dfu-preorder {
+  padding: 60px 0 70px;
+}
+
+.dfu-preorder__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dfu-preorder__steps-img {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.dfu-preorder__steps-img--pc {
+  display: block;
+}
+
+.dfu-preorder__steps-img--mobile {
+  display: none;
+}
+
+.dfu-preorder__steps-placeholder {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #fff0f8 0%, #fce8f5 100%);
+  border: 2px dashed #000;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  color: #c05080;
+  font-size: 15px;
+}
+
+.dfu-cta {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.dfu-btn {
+  display: inline-block;
+  padding: 15px 36px;
+  border-radius: 50px;
+  font-size: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  letter-spacing: 0.05em;
+}
+
+.dfu-btn--primary {
+  border: 2.5px solid #000;
+  background: linear-gradient(180deg, #00ffba 0%, #00d8ff 100%);
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dfu-btn--primary:hover {
+  transform: translate(-1px, -1px);
+}
+
+/* 箭頭 icon */
+.dfu-btn__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.dfu-btn--primary:hover .dfu-btn__arrow {
+  transform: translateX(4px);
+}
+
+
+/* ============================================================
+   SECTION 4: Shopping Guide 免稅品購物攻略
+   ============================================================ */
+.dfu-guide {
+  padding: 60px 0 70px;
+}
+
+.dfu-guide__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dfu-article-box {
+  background: #fff;
+  border-radius: 50px;
+  border: 2.5px solid #000;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 0px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dfu-article-box:hover {
+  transform: translate(-2px, -2px);
+}
+
+.dfu-article-box__image {
+  width: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  min-height: 220px;
+}
+
+.dfu-article-box__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dfu-article-box__content {
+  width: 50%;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dfu-article-box__title {
+  font-size: 25px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+.dfu-article-box__desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.dfu-btn--outline {
+  color: #fff;
+  background: #000;
+  padding: 8px 15px;
+  font-size: 14px;
+  width: fit-content;
+}
+
+.dfu-btn--outline:hover {
+  background: #e8508a;
+  color: #fff;
+}
+
+/* ============================================================
+   SECTION 5: Must Buy 機場免稅店必買
+   ============================================================ */
+.dfu-mustbuy {
+  padding: 60px 0 70px;
+}
+
+.dfu-mustbuy__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dfu-mustbuy__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ============================================================
+   SECTION 6: Locations 昇恆昌提貨地點
+   ============================================================ */
+.dfu-locations {
+  padding: 60px 0 70px;
+}
+
+.dfu-locations__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dfu-locations__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.dfu-location-card {
+  background: #fff;
+  border-radius: 50px;
+  border: 2px solid #000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dfu-location-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 地圖圖片區：內縮圓角＋淺灰底 */
+.dfu-location-card__map {
+  margin: 14px 14px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ebebeb;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dfu-location-card__map-img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* 資訊區 */
+.dfu-location-card__info {
+  padding: 14px 50px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dfu-location-card__title {
+  font-size: 25px;
+  font-weight: 800;
+  color: #222;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+/* 標籤群 */
+.dfu-location-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* 黑底白字圓角 pill */
+.dfu-location-card__tag {
+  display: inline-block;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 8px 13px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* 說明文字 */
+.dfu-location-card__desc {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* 桃紅色注意事項 */
+.dfu-location-card__note {
+  font-size: 15px;
+  color: #e8508a;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ============================================================
+   SECTION 7: FAQ 常見問題
+   ============================================================ */
+.dfu-faq {
+  padding: 60px 0 70px;
+}
+
+.dfu-faq__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dfu-faq__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.dfu-faq-card {
+  background: #fff;
+  border-radius: 50px;
+  border: 2.5px solid #000;
+  box-shadow: 0 20px 0px rgba(0, 0, 0, 0.1);
+  padding: 30px 35px 35px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dfu-faq-card__num {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  background: #FFAECF;
+  color: #000;
+  font-size: 20px;
+  font-weight: 800;
+  border: 2.5px solid #000;
+  padding: 10px 15px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.dfu-faq-card__question {
+  font-size: 22px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.dfu-faq-card__answer {
+  font-size: 15px;
+  color: #000;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   SECTION 8: Products 更多推薦商品
+   ============================================================ */
+.dfu-products {
+  padding: 60px 0 70px;
+}
+
+.dfu-products__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dfu-products__track-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.dfu-products__track {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  animation: dfu-scroll-left 30s linear infinite;
+}
+
+.dfu-products__track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes dfu-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.dfu-product-item {
+  flex: 0 0 auto;
+  width: 200px;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.dfu-product-item__img-wrap {
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border-radius: 20px;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.dfu-product-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dfu-product-item__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   Shared Utilities
+   ============================================================ */
+
+.dfu-section::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: transparent;
+}
+
+/* ============================================================
+   Y2K 裝飾圖示系統
+   - .dfu-deco        : 所有裝飾圖示的共用基底
+   - position: absolute，各自定位於 section 內
+   - pointer-events: none，不干擾互動
+   - aria-hidden: true，排除無障礙讀取
+   RWD：1024px 縮小 15%，768px 縮小 30%，500px 隱藏部分
+   ============================================================ */
+.dfu-deco {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  /* 高於 section 內容層（z-index:2），確保不被遮蓋 */
+}
+
+.dfu-deco img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Section 2: Benefits ── */
+/* 左側 HOPE 貼紙 */
+.dfu-deco--benefits-hope {
+  left: 10%;
+  top: 40%;
+  width: clamp(80px, 10vw, 148px);
+  transform: translateX(-30%);
+}
+
+/* 右下笑臉 */
+.dfu-deco--benefits-smile {
+  right: 10%;
+  top: 15%;
+  width: clamp(43px, 5.33vw, 75px);
+}
+
+/* ── Section 3: Preorder ── */
+/* 左側骷髏眼鏡貼紙 */
+.dfu-deco--preorder-skull {
+  left: 5%;
+  top: 35%;
+  width: clamp(133px, 15.83vw, 227px);
+}
+
+/* 右側嘴唇貼紙 */
+.dfu-deco--preorder-lips {
+  right: 1%;
+  bottom: 15%;
+  width: clamp(95px, 10vw, 160px);
+}
+
+/* 右上包包 */
+.dfu-deco--preorder-bag {
+  right: 2%;
+  top: 8%;
+  width: clamp(143px, 16.89vw, 241px);
+}
+
+/* ── Section 4: Guide (購物攻略) ── */
+/* 右上裝飾星 */
+.dfu-deco--guide-star {
+  right: 3%;
+  top: 8%;
+  width: clamp(35px, 4.3vw, 60px);
+}
+
+/* ── Section 5: Mustbuy ── */
+/* 右側 HOPE 文字 */
+.dfu-deco--mustbuy-hope {
+  right: 8%;
+  top: 30%;
+  width: clamp(80px, 10vw, 148px);
+  transform: translateX(30%);
+}
+
+/* 左下愛心 */
+.dfu-deco--mustbuy-heart {
+  left: 10%;
+  bottom: 8%;
+  width: clamp(35px, 4.33vw, 60px);
+}
+
+/* ── Section 6: Locations ── */
+/* 左側嘴唇 */
+.dfu-deco--locations-lips {
+  left: 8%;
+  top: 40%;
+  width: clamp(80px, 9.5vw, 136px);
+  transform: translateX(-30%);
+}
+
+/* 右側骷髏眼鏡 */
+.dfu-deco--locations-skull {
+  right: 0;
+  bottom: 20%;
+  width: clamp(133px, 15.83vw, 227px);
+  transform: translateX(30%);
+}
+
+/* ── Section 7: FAQ ── */
+/* 左側 HOPE */
+.dfu-deco--faq-hope {
+  left: 5%;
+  top: 50%;
+  width: clamp(80px, 10vw, 148px);
+}
+
+/* 右上笑臉星星 */
+.dfu-deco--faq-smile {
+  right: 5%;
+  top: 20%;
+  width: clamp(64px, 8vw, 112px);
+}
+
+/* 右下裝飾 */
+.dfu-deco--faq-star {
+  right: 3%;
+  bottom: 8%;
+  width: clamp(35px, 4.3vw, 60px);
+}
+
+/* ============================================================
+   Shared Modal：活動辦法
+   ============================================================ */
+body.dfu-modal-open {
+  overflow: hidden;
+}
+
+.dfu-modal {
+  position: fixed;
+  font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  inset: 0;
+  z-index: 1200;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.dfu-modal *,
+.dfu-modal *::before,
+.dfu-modal *::after {
+  box-sizing: border-box;
+}
+
+.dfu-modal.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dfu-modal-container {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dfu-modal-card {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: calc(100vh - 48px);
+  border: 2.5px solid #000;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.26);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(18px) scale(0.98);
+  transition: transform 0.22s ease;
+}
+
+.dfu-modal.is-open .dfu-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.dfu-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background: #fff37e;
+  color: #000;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dfu-modal-header {
+  flex-shrink: 0;
+  padding: 34px 72px 22px 36px;
+  background: linear-gradient(135deg, #fce8f5 0%, #d9f8ff 100%);
+}
+
+.dfu-modal-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 14px;
+  border: 2px solid #000;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.dfu-modal-title {
+  margin: 0;
+  color: #111;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+}
+
+.dfu-modal-divider {
+  width: 100%;
+  height: 2px;
+  margin-top: 18px;
+  background: #000;
+}
+
+.dfu-modal-body {
+  flex: 1;
+  min-height: 0;
+  padding: 26px 36px 18px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.dfu-modal-rules {
+  margin: 0;
+  padding-left: 1.45em;
+  color: #222;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.dfu-modal-rules > li + li {
+  margin-top: 10px;
+}
+
+.dfu-modal-rules ul {
+  margin: 6px 0 0;
+  padding-left: 1.4em;
+  list-style: disc;
+}
+
+.dfu-modal-rules ul li + li {
+  margin-top: 4px;
+}
+
+.dfu-modal-footer {
+  flex-shrink: 0;
+  padding: 16px 36px 24px;
+  background: #fff;
+  text-align: center;
+}
+
+.dfu-modal-btn {
+  min-width: 150px;
+  padding: 11px 28px;
+  border: 2.5px solid #000;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #00ffba 0%, #00d8ff 100%);
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dfu-modal-close:focus-visible,
+.dfu-modal-btn:focus-visible {
+  outline: 3px solid #ff5d9d;
+  outline-offset: 3px;
+}
+
+/* ── RWD: 1024px 等比縮小約 15% ── */
+/* ── RWD: ≤1024px 隱藏所有裝飾圖示 ── */
+@media (max-width: 1024px) {
+  .dfu-deco {
+    display: none;
+  }
+}
+
+/* ============================================================
+   RWD — 1024px
+   ============================================================ */
+@media (max-width: 1024px) {
+  .dfu-container {
+    padding: 0 28px;
+  }
+
+  .dfu-benefits-promo {
+    margin-top: 50px;
+    border-radius: 36px;
+    box-shadow: 0 16px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* 圓角縮減：1024px → 36px */
+  .dfu-benefit-card {
+    border-radius: 36px;
+  }
+
+  .dfu-benefit-card__title {
+    border-radius: 34px 34px 0 0;
+  }
+
+  .dfu-article-box {
+    border-radius: 36px;
+  }
+
+  .dfu-location-card {
+    border-radius: 36px;
+  }
+
+  .dfu-faq-card {
+    border-radius: 36px;
+  }
+
+  .dfu-faq-card__num {
+    border-radius: 36px;
+  }
+
+  .dfu-section-title {
+    font-size: 50px;
+    -webkit-text-stroke: 3px #000000;
+    paint-order: stroke fill;
+    text-shadow: 4px 4px 0 #000000;
+  }
+
+  .dfu-section-title__yellow {
+    -webkit-text-stroke: 3px #000000;
+    paint-order: stroke fill;
+    text-shadow: 4px 4px 0 #000000;
+  }
+
+  .dfu-benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .dfu-faq__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dfu-locations__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* ============================================================
+   RWD — 768px
+   ============================================================ */
+@media (max-width: 768px) {
+  .dfu-container {
+    padding: 0 20px;
+  }
+
+  .dfu-benefits-promo {
+    margin-top: 42px;
+    border-radius: 24px;
+    box-shadow: 0 14px 0 rgba(0, 0, 0, 0.1);
+  }
+
+
+  .dfu-modal-container {
+    padding: 18px;
+    align-items: center;
+  }
+
+  .dfu-modal-card {
+    max-height: calc(100vh - 36px);
+    border-radius: 24px;
+  }
+
+  .dfu-modal-header {
+    padding: 28px 64px 18px 24px;
+  }
+
+  .dfu-modal-title {
+    font-size: 27px;
+  }
+
+  .dfu-modal-body {
+    padding: 22px 24px 14px;
+  }
+
+  .dfu-modal-footer {
+    padding: 14px 24px 20px;
+  }
+
+  /* 圓角縮減：768px → 24px */
+  .dfu-benefit-card {
+    border-radius: 24px;
+  }
+
+  .dfu-benefit-card__title {
+    border-radius: 22px 22px 0 0;
+  }
+
+  .dfu-article-box {
+    border-radius: 24px;
+  }
+
+  .dfu-location-card {
+    border-radius: 24px;
+  }
+
+  .dfu-faq-card {
+    border-radius: 24px;
+  }
+
+  .dfu-faq-card__num {
+    border-radius: 24px;
+  }
+
+  .dfu-section-title {
+    font-size: 38px;
+    -webkit-text-stroke: 3px #000000;
+    paint-order: stroke fill;
+    text-shadow: none;
+    white-space: normal;
+  }
+
+  .dfu-section-title__yellow {
+    -webkit-text-stroke: 3px #000000;
+    paint-order: stroke fill;
+    text-shadow: none;
+  }
+
+  .dfu-section-title-wrap {
+    gap: 12px;
+  }
+
+  .dfu-benefits {
+    padding: 44px 0 50px;
+  }
+
+  .dfu-benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .dfu-benefit-card__title span {
+    font-size: 26px;
+  }
+
+  /* 768px：卡片縮小，數字適度放大至 7.5vw */
+  .dfu-benefit-card::after {
+    font-size: 7.5vw;
+  }
+
+  .dfu-article-box {
+    flex-direction: column;
+  }
+
+  .dfu-article-box__image {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .dfu-article-box__content {
+    width: 100%;
+    padding: 24px 20px;
+  }
+
+  .dfu-locations__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .dfu-faq__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  /* .dfu-kv__img--pc / --mobile 的 display 切換已移除：
+     <picture> 元素的 <source media> 屬性負責 PC/Mobile 圖片切換，
+     CSS 不介入，避免整個 picture 被 display:none 隱藏 */
+
+  .dfu-preorder__steps-img--pc {
+    display: none;
+  }
+
+  .dfu-preorder__steps-img--mobile {
+    display: block;
+  }
+
+  .dfu-product-item {
+    width: 140px;
+  }
+
+  .dfu-product-item__img-wrap {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* ============================================================
+   RWD — 500px
+   ============================================================ */
+@media (max-width: 500px) {
+  .dfu-container {
+    padding: 0 16px;
+  }
+
+  .dfu-benefits-promo {
+    margin-top: 34px;
+    border-radius: 16px;
+    box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .dfu-modal-container {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
+  .dfu-modal-card {
+    width: 100%;
+    max-height: calc(100dvh - 10px);
+    border-radius: 22px 22px 0 0;
+    box-shadow: none;
+  }
+
+  .dfu-modal-close {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    font-size: 27px;
+  }
+
+  .dfu-modal-header {
+    padding: 24px 58px 16px 20px;
+  }
+
+  .dfu-modal-kicker {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .dfu-modal-title {
+    font-size: 23px;
+  }
+
+  .dfu-modal-divider {
+    margin-top: 14px;
+  }
+
+  .dfu-modal-body {
+    padding: 18px 20px 12px;
+  }
+
+  .dfu-modal-rules {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .dfu-modal-footer {
+    padding: 12px 20px calc(16px + env(safe-area-inset-bottom));
+  }
+
+  /* 圓角縮減：500px → 16px，避免圓角在小螢幕壓縮內容 */
+  .dfu-benefit-card {
+    border-radius: 16px;
+  }
+
+  .dfu-benefit-card__title {
+    border-radius: 14px 14px 0 0;
+  }
+
+  .dfu-article-box {
+    border-radius: 16px;
+  }
+
+  .dfu-location-card {
+    border-radius: 16px;
+  }
+
+  .dfu-faq-card {
+    border-radius: 16px;
+  }
+
+  .dfu-faq-card__num {
+    border-radius: 16px;
+  }
+
+  .dfu-section-title {
+    font-size: 26px;
+    -webkit-text-stroke: 3px #000000;
+    paint-order: stroke fill;
+    text-shadow: none;
+    white-space: normal;
+  }
+
+  .dfu-section-title__yellow {
+    -webkit-text-stroke: 3px #000000;
+    paint-order: stroke fill;
+    text-shadow: none;
+  }
+
+  .dfu-section-title-wrap {
+    gap: 8px;
+  }
+
+  .dfu-section-badge {
+    font-size: 18px;
+    padding: 4px 14px;
+  }
+
+  .dfu-benefits {
+    padding: 48px 0 40px;
+  }
+
+  .dfu-benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .dfu-benefit-card {
+    margin-top: 16px;
+  }
+
+  /* 手機版卡片縮小後數字等比放大，維持裝飾效果 */
+  .dfu-benefit-card::after {
+    font-size: 10vw;
+  }
+
+  .dfu-benefit-card__title {
+    padding: 22px 12px 12px;
+    gap: 6px;
+  }
+
+  .dfu-benefit-card__title::before {
+    font-size: 12px;
+    padding: 3px 12px;
+  }
+
+  .dfu-benefit-card__title span {
+    font-size: 22px;
+    -webkit-text-stroke: 2px #000;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .dfu-benefit-card__desc {
+    font-size: 12px;
+    padding: 14px 12px 16px;
+  }
+
+  .dfu-article-box__title {
+    font-size: 17px;
+  }
+
+  .dfu-faq__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .dfu-preorder {
+    padding: 36px 0 40px;
+  }
+
+  .dfu-guide {
+    padding: 36px 0 40px;
+  }
+
+  .dfu-mustbuy {
+    padding: 36px 0 40px;
+  }
+
+  .dfu-locations {
+    padding: 36px 0 40px;
+  }
+
+  .dfu-faq {
+    padding: 36px 0 40px;
+  }
+
+  .dfu-products {
+    padding: 36px 0 40px;
+  }
+
+  .dfu-product-item {
+    width: 120px;
+  }
+
+  .dfu-product-item__img-wrap {
+    width: 120px;
+    height: 120px;
+  }
+
+  .dfu-btn {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+}
+
+/* ============================================================
+   SIDENAV — 抽屜式側邊導航
+   架構：btn 在 sidebar 內左側，整體一起平移
+   收合：translateX(menu寬度) → btn 露在右側邊緣，menu 推出畫面
+   展開：translateX(0) → 全部滑入
+   ============================================================ */
+
+/* ============================================================
+   SIDENAV 完整架構說明
+   ─────────────────────────────────────────────────────────
+   HTML 結構（三個完全獨立元素）：
+     #dfu-sidebar     → 選單本體
+     .dfu-toggle-btn  → 控制按鈕（與 sidebar 完全分離）
+     .dfu-toTop       → 回頂按鈕
+
+   桌機版（>768px）：
+     sidebar  = 右側抽屜，translateX 滑入/出
+     toggle   = 貼在 sidebar 左緣，translateX 同步移動
+     toTop    = 右下角固定
+
+   手機版（≤768px）：
+     sidebar  = 底部固定 bar，translateY 滑上/下
+     toggle   = 右下角獨立固定 tab，不隨 sidebar 移動
+     toTop    = 底部 bar 上方
+   ============================================================ */
+
+/* ─── 桌機版 SIDEBAR（右側抽屜） ─── */
+#dfu-sidebar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) translateX(140px);
+  /* 預設隱藏，menu 推出畫面 */
+  transition: transform 280ms ease;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+}
+
+#dfu-sidebar.is-open {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* 桌機版 menu */
+.dfu-menu {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 16px 0;
+}
+
+.dfu-menu>img {
+  width: 75%;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.dfu-menu__style {
+  background: #fff;
+  border: 2px solid #000;
+  border-right: none;
+  border-radius: 16px 0 0 16px;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.dfu-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dfu-menu ul li {
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1.5px solid #ffaecf;
+  font-size: clamp(11px, 1.3vw, 14px);
+  line-height: 2.4em;
+  transition: color 0.2s, background 0.2s;
+}
+
+.dfu-menu ul li:last-child {
+  border-bottom: none;
+}
+
+.dfu-menu ul li a {
+  display: block;
+  padding: 0 14px;
+  color: #333 !important;
+  text-decoration: none !important;
+}
+
+.dfu-menu ul li:hover {
+  background: #fff5f8;
+}
+
+.dfu-menu ul li:hover a {
+  color: #ff6fa0 !important;
+}
+
+/* ─── 桌機版 TOGGLE BTN（與 sidebar translateX 同步） ─── */
+.dfu-toggle-btn {
+  position: fixed;
+  top: 50%;
+  right: 140px;
+  /* sidebar menu 寬度，貼在左緣 */
+  transform: translateY(-50%);
+  transition: right 280ms ease;
+  z-index: 201;
+  width: 32px;
+  height: 92px;
+  background: #000;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 展開時 btn 跟著移到 sidebar 左緣（right: 0 對齊 sidebar 入屏後的位置） */
+.dfu-toggle-btn.is-open {
+  right: 140px;
+}
+
+/* 收合時 btn 貼在視窗右側邊緣 */
+.dfu-toggle-btn:not(.is-open) {
+  right: 0;
+}
+
+.dfu-toggle-btn:hover {
+  background: #e8508a;
+}
+
+.dfu-toggle-btn span {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  writing-mode: vertical-rl;
+  letter-spacing: 0.1em;
+  user-select: none;
+  line-height: 1;
+}
+
+/* ─── TO-TOP 按鈕（桌機版） ─── */
+.dfu-toTop {
+  display: none;
+  position: fixed;
+  right: 16px;
+  bottom: 24px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  align-items: center;
+  justify-content: center;
+}
+
+.dfu-toTop:focus {
+  outline: none;
+}
+
+/* ─── RWD: 1024px ─── */
+@media (max-width: 1024px) {
+  #dfu-sidebar {
+    transform: translateY(-50%) translateX(120px);
+  }
+
+  #dfu-sidebar.is-open {
+    transform: translateY(-50%) translateX(0);
+  }
+
+  .dfu-menu {
+    width: 120px;
+  }
+
+  .dfu-menu ul li {
+    font-size: 1.8vw;
+  }
+
+  .dfu-toggle-btn:not(.is-open) {
+    right: 0;
+  }
+
+  .dfu-toggle-btn.is-open {
+    right: 120px;
+  }
+}
+
+/* ─── RWD: 768px — 三元素完全獨立，各司其職 ─── */
+@media (max-width: 768px) {
+
+  /* SIDEBAR：底部固定 bar，整體上下滑動 */
+  #dfu-sidebar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(0);
+    /* 預設展開 */
+    transition: transform 280ms ease;
+    flex-direction: column;
+    align-items: stretch;
+    z-index: 200;
+  }
+
+  /* ★ 明確覆蓋桌機版 .is-open 的 translateY(-50%)，手機版展開就是 translateY(0) */
+  #dfu-sidebar.is-open {
+    transform: translateY(0) !important;
+  }
+
+  #dfu-sidebar:not(.is-open) {
+    transform: translateY(100%) !important;
+    /* 收合：完全推至底部以下 */
+  }
+
+  /* MENU：橫排兩行 */
+  .dfu-menu {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    max-height: none;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .dfu-menu>img {
+    display: none;
+  }
+
+  .dfu-menu__style {
+    border: none;
+    border-top: 2.5px solid #000;
+    border-radius: 0;
+    padding: 6px 8px;
+    background: #fff;
+  }
+
+  .dfu-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dfu-menu ul li {
+    border-bottom: none;
+    border-right: 1.5px solid #ffaecf;
+    line-height: 2.4em;
+    padding: 0 12px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .dfu-menu ul li:last-child {
+    border-right: none;
+  }
+
+  /* TOGGLE BTN：右下角固定垂直 tab，完全獨立 */
+  .dfu-toggle-btn {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    left: auto;
+    transform: none;
+    /* 覆蓋桌機版 translateY(-50%) */
+    transition: none;
+    width: 32px;
+    height: 96px;
+    border-radius: 8px 0 0 0;
+    /* 右下角貼邊，左上圓角 */
+    z-index: 201;
+    flex-direction: column;
+  }
+
+  /* 手機版 btn 不需要 right 過渡動畫 */
+  .dfu-toggle-btn:not(.is-open),
+  .dfu-toggle-btn.is-open {
+    right: 0;
+  }
+
+  .dfu-toggle-btn span {
+    writing-mode: vertical-rl;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+
+    /* 文字由下往上 */
+  }
+
+  /* TOP 按鈕：底部 bar 上方，toggle tab 左側 */
+  .dfu-toTop {
+    bottom: 8px;
+    right: 40px;
+    /* toggle tab(32px) 左側，留 8px 間距 */
+    top: auto;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ─── RWD: 500px ─── */
+@media (max-width: 500px) {
+  .dfu-menu ul li {
+    font-size: 0.8rem;
+    padding: 0 9px;
+  }
+
+  .dfu-toggle-btn {
+    width: 28px;
+    height: 84px;
+  }
+
+  .dfu-toggle-btn span {
+    font-size: 0.62rem;
+  }
+
+  .dfu-toTop {
+    right: 36px;
+    width: 36px;
+    height: 36px;
+    font-size: 10px;
+  }
+}

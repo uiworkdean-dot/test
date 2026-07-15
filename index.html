@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>昇恆昌免稅品購物升級</title>
+  <meta content="出國前45天即可預訂免稅商品，享受四大好處，盡享機場免稅購物樂趣。" name="description" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800;900&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Project Stylesheet -->
+  <link href="css/reset.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ============================================================
+     Dutyfreeupgrade Page Wrapper
+     All classes prefixed with "dfu-" to avoid CSS conflicts
+============================================================ -->
+  <div class="top-without-brand dfu-wrap">
+    <!-- ======================================================
+       SECTION 1: KV Banner (大圖輪播區塊)
+  ====================================================== -->
+    <section aria-label="主視覺橫幅" class="dfu-section dfu-section--kv dfu-kv">
+      <!--
+      ★ 替換說明：
+      <picture> 元素讓瀏覽器自動選擇最佳格式與尺寸：
+        1. 支援 WebP 的瀏覽器 → 載入 .webp（檔案更小、載入更快）
+        2. 不支援 WebP 的瀏覽器 → fallback 至 .png（保持相容性）
+        3. 依螢幕寬度切換 PC / Mobile 版本（media query）
+
+      需準備的圖片檔案（共 4 張）：
+        images/kv-pc.webp      ← PC WebP（優先）
+        images/kv-pc.png       ← PC PNG（fallback）
+        images/kv-mobile.webp  ← Mobile WebP（優先）
+        images/kv-mobile.png   ← Mobile PNG（fallback）
+    -->
+      <picture class="dfu-kv__img dfu-kv__img--pc">
+        <source media="(min-width: 769px)" srcset="images/kv-pc.webp?v260424" type="image/webp" />
+        <source media="(min-width: 769px)" srcset="images/kv-pc.png?v260424" type="image/png" />
+        <source srcset="images/kv-mobile.webp" type="image/webp" />
+        <img alt="昇恆昌免稅品購物升級 — 出國前45天即可預訂" class="dfu-kv__img" loading="eager" src="images/kv-mobile.png"
+          width="1440" />
+      </picture>
+    </section>
+    <!-- ======================================================
+       SECTION 2: Benefits 可享有四大好處
+  ====================================================== -->
+    <section aria-labelledby="dfu-benefits-title" class="dfu-section dfu-section--benefits dfu-benefits">
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--benefits-hope" src="images/deco/benefits-hope.png" />
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--benefits-smile" src="images/deco/benefits-smile.png" />
+      <div class="dfu-container">
+        <div class="dfu-benefits__header">
+          <div class="dfu-section-badge">免稅品<span class="dfu-section-badge__accent">網路預訂</span></div>
+          <div class="dfu-section-title-wrap">
+            <h2 class="dfu-section-title" id="dfu-benefits-title">可享有<span class="dfu-section-title__yellow">四大好處</span>
+            </h2>
+          </div>
+        </div>
+        <div class="dfu-benefits__grid">
+          <!-- 好處 1：線上服務 -->
+          <div class="dfu-benefit-card" data-num="01">
+            <div class="dfu-benefit-card__title" data-label="線上服務">
+              <span>24小時</span>
+            </div>
+            <p class="dfu-benefit-card__desc">
+              不論深夜或凌晨，都能隨時下單精品保養品，出國前45天開放預訂。各機場最晚可預訂的時間不同 <a id="eck-Dutyfreeupgrade-2-cta_benefits-x"
+                href="https://www.everrich.com/tw/shopping-flow" target="_blank">立即確認</a>
+            </p>
+          </div>
+          <!-- 好處 2：現場取貨 -->
+          <div class="dfu-benefit-card" data-num="02">
+            <div class="dfu-benefit-card__title" data-label="現場取貨">
+              <span>零時差</span>
+            </div>
+            <p class="dfu-benefit-card__desc">
+              無需配合機場免稅店營業時間，線上訂好，機場取貨只需1分鐘！
+            </p>
+          </div>
+          <!-- 好處 3：四大機場 -->
+          <div class="dfu-benefit-card" data-num="03">
+            <div class="dfu-benefit-card__title" data-label="四大機場">
+              <span>輕鬆取貨</span>
+            </div>
+            <p class="dfu-benefit-card__desc">
+              桃園、松山、台中、高雄機場出國的航班皆可提領您預訂的免稅品。
+            </p>
+          </div>
+          <!-- 好處 4：線上獨家 -->
+          <div class="dfu-benefit-card" data-num="04">
+            <div class="dfu-benefit-card__title" data-label="線上獨家">
+              <span>5%回饋</span>
+            </div>
+            <p class="dfu-benefit-card__desc">
+              完成訂購即可獲得該筆金額5%回饋券，可於指定時間內至昇恆昌內湖旗艦店使用。
+            </p>
+          </div>
+        </div>
+
+        <!-- 中南部加碼優惠 Banner：純圖片呈現，PC / Mobile 於 768px 切換 -->
+        <div aria-controls="modal-earlybird-rules" aria-haspopup="dialog"
+          aria-label="查看台中／高雄機場早鳥限定活動辦法"
+          class="dfu-benefits-promo js-dfu-modal-open" data-modal="modal-earlybird-rules"
+          id="dfu-south-bonus" role="button" tabindex="0">
+          <picture class="dfu-benefits-promo__picture">
+            <source media="(max-width: 769px)" srcset="https://img.everrich.com/cms/uploads/ec-event-publish/Dutyfreeupgrade/images/benefits-south-bonus-mobile.png" type="image/png">
+            <img alt="中南部早鳥限定" class="dfu-benefits-promo__img" loading="eager" src="https://img.everrich.com/cms/uploads/ec-event-publish/Dutyfreeupgrade/images/benefits-south-bonus-pc.png" width="1122">
+          </picture>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================
+       SECTION 3: Pre-order 出國前45天即可預訂
+  ====================================================== -->
+    <section aria-labelledby="dfu-preorder-title" class="dfu-section dfu-section--preorder dfu-preorder">
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--preorder-skull" src="images/deco/preorder-skull.png" />
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--preorder-lips" src="images/deco/preorder-lips.png" />
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--preorder-bag" src="images/deco/preorder-bag.png" />
+      <div class="dfu-container">
+        <div class="dfu-preorder__header">
+          <div class="dfu-section-badge">免稅品<span class="dfu-section-badge__accent">訂購流程</span></div>
+          <div class="dfu-section-title-wrap">
+            <h2 class="dfu-section-title" id="dfu-preorder-title">出國前<span
+                class="dfu-section-title__yellow">45天</span>即可預訂</h2>
+          </div>
+        </div>
+        <img alt="預訂步驟流程：步驟1瀏覽商品、步驟2加入購物車、步驟3選擇航班資訊、步驟4出錢客人、步驟5Email訂單資訊、步驟6加入會員付款"
+          class="dfu-preorder__steps-img dfu-preorder__steps-img--pc" src="images/preorder-steps-pc.png?v260611"
+          width="900" />
+        <img alt="預訂步驟流程" class="dfu-preorder__steps-img dfu-preorder__steps-img--mobile"
+          src="images/preorder-steps-mobile.png?v260611" width="750" />
+        <div class="dfu-cta">
+          <a class="dfu-btn dfu-btn--primary" href="https://www.everrich.com/tw/"
+            id="eck-Dutyfreeupgrade-3-cta_preorder-x" target="_blank">立即逛逛
+            <span class="dfu-btn__arrow">➔</span></a>
+          <a class="dfu-btn dfu-btn--primary" href="https://www.everrich.com/tw/shopping-flow"
+            id="eck-Dutyfreeupgrade-3-cta_preorder-flow-x" target="_blank">更多詳細流程
+            <span class="dfu-btn__arrow">➔</span></a>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================
+       SECTION 4: Shopping Guide 免稅品購物攻略
+  ====================================================== -->
+    <section aria-labelledby="dfu-guide-title" class="dfu-section dfu-section--guide dfu-guide">
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--guide-star" src="images/deco/guide-star.png" />
+      <div class="dfu-container">
+        <div class="dfu-guide__header">
+          <div class="dfu-section-title-wrap">
+            <h2 class="dfu-section-title" id="dfu-guide-title">免稅品<span class="dfu-section-title__yellow">購物攻略</span>
+            </h2>
+          </div>
+        </div>
+        <!-- 攻略文章 1 -->
+        <article class="dfu-article-box">
+          <div class="dfu-article-box__image">
+            <img alt="大人氣品牌 出發前完成佈局" class="dfu-article-box__img" src="images/article-guide-01.png" />
+          </div>
+          <div class="dfu-article-box__content">
+            <h3 class="dfu-article-box__title">線上訂免稅品更便宜？昇恆昌網路購物怎麼買、機場取貨流程全攻略</h3>
+            <p class="dfu-article-box__desc">
+              2026 出國必看！線上訂免稅品真的更便宜嗎？本攻略完整拆解昇恆昌網路購物流程，教你如何疊加「免稅價、新會員優惠、支付回饋」省下最高
+              20%。內含桃園、松山、高雄各機場取貨地點圖解，即使是紅眼航班也能輕鬆領取，讓您優雅出國不趕路！
+            </p>
+            <a class="dfu-btn--outline" href="https://www.everrich.com/tw/vstory/1687-dutyfreestrategy2026"
+              id="eck-Dutyfreeupgrade-4-article01_readmore-x" rel="noopener noreferrer" target="_blank">
+              閱讀全文
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- ======================================================
+       SECTION 5: Must Buy 機場免稅店必買
+       兩篇文章，同 Shopping Guide box 呈現方式
+  ====================================================== -->
+    <section aria-labelledby="dfu-mustbuy-title" class="dfu-section dfu-section--mustbuy dfu-mustbuy">
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--mustbuy-hope" src="images/deco/mustbuy-hope.png" />
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--mustbuy-heart" src="images/deco/mustbuy-heart.png" />
+      <div class="dfu-container">
+        <div class="dfu-mustbuy__header">
+          <div class="dfu-section-badge">延伸閱讀</div>
+          <div class="dfu-section-title-wrap">
+            <h2 class="dfu-section-title" id="dfu-mustbuy-title">機場<span class="dfu-section-title__yellow">免稅店必買</span>
+            </h2>
+          </div>
+        </div>
+        <div class="dfu-mustbuy__grid">
+          <!-- 必買文章 1 -->
+          <article class="dfu-article-box">
+            <div class="dfu-article-box__image">
+              <img alt="機場免稅店必買 10大人氣品牌" class="dfu-article-box__img" src="images/article-mustbuy-01.png" />
+            </div>
+            <div class="dfu-article-box__content">
+              <h3 class="dfu-article-box__title">機場免稅店必買10大美妝品牌</h3>
+              <p class="dfu-article-box__desc">
+                出國旅行除了期待探索新風景，機場免稅店的「美妝保養/香氛」更是旅人不能錯過的環節！
+                許多經典品牌都會推出大容量、雙瓶裝、限定組合，不僅價格更划算，也是囤貨、送禮的最佳選擇。這次精選10大人氣美妝保養/香氛品牌，帶你一次掌握免稅必買明星商品。
+              </p>
+              <a class="dfu-btn--outline" href="https://www.everrich.com/tw/vstory/1571-dutyfreecosmetics"
+                id="eck-Dutyfreeupgrade-5-article01_readmore-x" rel="noopener noreferrer" target="_blank">
+                閱讀全文
+              </a>
+            </div>
+          </article>
+          <!-- 必買文章 2 -->
+          <article class="dfu-article-box">
+            <div class="dfu-article-box__image">
+              <img alt="10大人氣台灣伴手禮，哪道才對味？" class="dfu-article-box__img" src="images/article-mustbuy-02.png" />
+            </div>
+            <div class="dfu-article-box__content">
+              <h3 class="dfu-article-box__title">10大人氣台灣伴手禮哪道才對味？</h3>
+              <p class="dfu-article-box__desc">
+                網路調查十大代表台灣的熱門伴手禮。紅遍世界的鳳梨酥，一口咬下不僅是酸甜，更將台灣風味一起送進外國朋友的心坎裡；印有知名地標的城市啤酒杯、香氣濃郁的Cona's妮娜巧克力紛紛霸氣登場，每樣都是專屬台灣的驕傲選品。
+              </p>
+              <a class="dfu-btn--outline" href="https://www.everrich.com/tw/vstory/1573-top10souvenir"
+                id="eck-Dutyfreeupgrade-5-article02_readmore-x" rel="noopener noreferrer" target="_blank">
+                閱讀全文
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================
+       SECTION 6: Locations 昇恆昌取貨地點
+       地圖以 PNG 圖片呈現，2欄網格排列
+  ====================================================== -->
+    <section aria-labelledby="dfu-locations-title" class="dfu-section dfu-section--locations dfu-locations">
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--locations-lips" src="images/deco/locations-lips.png" />
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--locations-skull" src="images/deco/locations-skull.png" />
+      <div class="dfu-container">
+        <div class="dfu-locations__header">
+          <div class="dfu-section-title-wrap">
+            <h2 class="dfu-section-title" id="dfu-locations-title">昇恆昌<span
+                class="dfu-section-title__yellow">取貨地點</span></h2>
+          </div>
+        </div>
+        <div class="dfu-locations__grid">
+          <!-- 取貨地點 1 -->
+          <div class="dfu-location-card">
+            <div class="dfu-location-card__map">
+              <img alt="桃園國際機場 第一航廈出境大廳地圖" class="dfu-location-card__map-img" src="images/tpe-terminal-1-2024.png" />
+            </div>
+            <div class="dfu-location-card__info">
+              <div class="dfu-location-card__title">桃園國際機場 第一航廈｜出境大廳</div>
+              <div class="dfu-location-card__tags">
+                <span class="dfu-location-card__tag">近 B5 登機門</span><span class="dfu-location-card__tag">近 A6 登機門</span>
+              </div>
+              <p class="dfu-location-card__desc">線上預訂時間：出國航班起飛前45天 ~ 24小時<br>請於登機前 1-2 小時，至離登機門最近櫃台取貨</p>
+              <p class="dfu-location-card__note">若想回國再領，務必至商品服務中心辦理寄貨手續</p>
+            </div>
+          </div>
+          <!-- 取貨地點 2 -->
+          <div class="dfu-location-card">
+            <div class="dfu-location-card__map">
+              <img alt="桃園國際機場 第二航廈出境大廳地圖" class="dfu-location-card__map-img" src="images/tpe-terminal-2-2024.png" />
+            </div>
+            <div class="dfu-location-card__info">
+              <div class="dfu-location-card__title">桃園國際機場 第二航廈｜出境大廳</div>
+              <div class="dfu-location-card__tags">
+                <span class="dfu-location-card__tag">GUCCI 精品店旁</span>
+              </div>
+              <p class="dfu-location-card__desc">線上預訂時間：出國航班起飛前45天 ~ 24小時<br>請於登機前 1-2 小時，至離登機門最近櫃台取貨</p>
+              <p class="dfu-location-card__note">若想回國再領，務必至商品服務中心辦理寄貨手續</p>
+            </div>
+          </div>
+          <!-- 取貨地點 3 -->
+          <div class="dfu-location-card">
+            <div class="dfu-location-card__map">
+              <img alt="桃園國際機場 第三航廈出境大廳地圖" class="dfu-location-card__map-img" src="images/tpe-terminal-2-2024.png" />
+            </div>
+            <div class="dfu-location-card__info">
+              <div class="dfu-location-card__title">桃園國際機場 第三航廈｜出境大廳</div>
+              <div class="dfu-location-card__tags">
+                <span class="dfu-location-card__tag">GUCCI 精品店旁</span>
+              </div>
+              <p class="dfu-location-card__desc">線上預訂時間：出國航班起飛前45天 ~ 24小時<br>請於登機前 1-2 小時，至離登機門最近櫃台取貨</p>
+              <p class="dfu-location-card__note">若想回國再領，務必至商品服務中心辦理寄貨手續</p>
+            </div>
+          </div>
+          <!-- 取貨地點 4 -->
+          <div class="dfu-location-card">
+            <div class="dfu-location-card__map">
+              <img alt="臺北松山機場出境大廳地圖" class="dfu-location-card__map-img" src="images/tsa-terminal-2024.png" />
+            </div>
+            <div class="dfu-location-card__info">
+              <div class="dfu-location-card__title">臺北松山機場｜出境大廳</div>
+              <div class="dfu-location-card__tags">
+                <span class="dfu-location-card__tag">近貴賓室</span>
+              </div>
+              <p class="dfu-location-card__desc">線上預訂時間：出國航班起飛前45天 ~ 20小時<br>請於登機前 1-2 小時，至離登機門最近櫃台取貨</p>
+              <p class="dfu-location-card__note">若想回國再領，務必至商品服務中心辦理寄貨手續</p>
+            </div>
+          </div>
+          <!-- 取貨地點 5 -->
+          <div class="dfu-location-card">
+            <div class="dfu-location-card__map">
+              <img alt="臺中國際機場出境大廳地圖" class="dfu-location-card__map-img" src="images/rmq-terminal-2024.png" />
+            </div>
+            <div class="dfu-location-card__info">
+              <div class="dfu-location-card__title">臺中國際機場｜出境大廳</div>
+              <div class="dfu-location-card__tags">
+                <span class="dfu-location-card__tag">近3號登機門</span>
+              </div>
+              <p class="dfu-location-card__desc">線上預訂時間：出國航班起飛前45天 ~ 48小時<br>請於登機前 1-2 小時，至離登機門最近櫃台取貨</p>
+              <p class="dfu-location-card__note">若想回國再領，務必至商品服務中心辦理寄貨手續</p>
+            </div>
+          </div>
+          <!-- 取貨地點 6 -->
+          <div class="dfu-location-card">
+            <div class="dfu-location-card__map">
+              <img alt="高雄小港機場出境大廳地圖" class="dfu-location-card__map-img" src="images/khh-terminal-2024.png" />
+            </div>
+            <div class="dfu-location-card__info">
+              <div class="dfu-location-card__title">高雄小港機場</div>
+              <div class="dfu-location-card__tags">
+                <span class="dfu-location-card__tag">台灣農特產品專區內</span><span class="dfu-location-card__tag">近 22
+                  號登機門</span>
+              </div>
+              <p class="dfu-location-card__desc">線上預訂時間：出國航班起飛前45天 ~ 72小時<br>請於登機前 1-2 小時，至離登機門最近櫃台取貨</p>
+              <p class="dfu-location-card__note">若想回國再領，務必至商品服務中心辦理寄貨手續</p>
+            </div>
+          </div>
+        </div>
+        <div class="dfu-cta">
+          <a class="dfu-btn dfu-btn--primary" href="https://www.everrich.com/tw/vstory/1687-dutyfreestrategy2026"
+            id="eck-Dutyfreeupgrade-6-cta_locations-x" target="_blank">詳細取貨說明
+            <span class="dfu-btn__arrow">➔</span></a>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================
+       SECTION 7: FAQ 常見問題 Q&A
+  ====================================================== -->
+    <section aria-labelledby="dfu-faq-title" class="dfu-section dfu-section--faq dfu-faq">
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--faq-hope" src="images/deco/faq-hope.png" />
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--faq-smile" src="images/deco/faq-smile.png" />
+      <img alt="" aria-hidden="true" class="dfu-deco dfu-deco--faq-star" src="images/deco/faq-star.png" />
+      <div class="dfu-container">
+        <div class="dfu-faq__header">
+          <div class="dfu-section-badge">免稅品<span class="dfu-section-badge__accent">訂購服務</span></div>
+          <div class="dfu-section-title-wrap">
+            <h2 class="dfu-section-title" id="dfu-faq-title">常見問題 <span class="dfu-section-title__yellow">Q&amp;A</span>
+            </h2>
+          </div>
+        </div>
+        <div class="dfu-faq__grid">
+          <div class="dfu-faq-card">
+            <div class="dfu-faq-card__num">問題1</div>
+            <div class="dfu-faq-card__question">我的飛機是半夜（紅眼航班），取貨櫃檯有開嗎？</div>
+            <p class="dfu-faq-card__answer">
+              A：有，四大機場商品服務中心（取貨櫃檯）隨時為您提供服務。※務必在登機前90分鐘辦理取貨。
+            </p>
+          </div>
+          <div class="dfu-faq-card">
+            <div class="dfu-faq-card__num">問題2</div>
+            <div class="dfu-faq-card__question">哪些機場出國可以使用線上預訂、機場取貨的服務？</div>
+            <p class="dfu-faq-card__answer">
+              A：不只北部機場可以使用！全台四大機場 - 桃園國際機場、臺北松山機場、臺中國際機場、高雄小港機場，只要是出國旅客，都能使用這項服務。
+            </p>
+          </div>
+          <div class="dfu-faq-card">
+            <div class="dfu-faq-card__num">問題3</div>
+            <div class="dfu-faq-card__question">最晚什麼時候預訂免稅品都來得及？</div>
+            <p class="dfu-faq-card__answer">
+              A：各個機場可以下單的時間不一樣：松山機場為起飛前45天 至 20 小時；高雄機場為起飛前45天 至 72 小時。詳細時間請詳閱 <a
+                href="https://www.everrich.com/tw/shopping-flow" target="_blank">預訂流程說明</a>。
+            </p>
+          </div>
+          <div class="dfu-faq-card">
+            <div class="dfu-faq-card__num">問題4</div>
+            <div class="dfu-faq-card__question">回國也可以領免稅品嗎？還是只能出國領？</div>
+            <p class="dfu-faq-card__answer">
+              A：可以！請於出國時，先至取貨櫃檯辦理寄貨手續，回國即可再領取。
+            </p>
+          </div>
+          <div class="dfu-faq-card">
+            <div class="dfu-faq-card__num">問題5</div>
+            <div class="dfu-faq-card__question">網路上訂完免稅品，去機場哪裡領？</div>
+            <p class="dfu-faq-card__answer">
+              A：通關後，找到離您登機門最近的商品服務中心就可以辦理取貨。
+            </p>
+          </div>
+          <div class="dfu-faq-card">
+            <div class="dfu-faq-card__num">問題6</div>
+            <div class="dfu-faq-card__question">取貨要本人嗎？可以幫朋友領嗎？</div>
+            <p class="dfu-faq-card__answer">
+              A：很抱歉，訂購者本人必須親自至商品服務中心領取商品。
+            </p>
+          </div>
+          <div class="dfu-faq-card">
+            <div class="dfu-faq-card__num">問題7</div>
+            <div class="dfu-faq-card__question">訂單確認後是否可以修改或取消訂單？</div>
+            <p class="dfu-faq-card__answer">
+              A：訂單送出後無法修改。如有訂單問題，請聯繫<a href="https://www.everrich.com/tw/contact-us" target="_blank">客服人員</a>，將有專人為您服務。
+            </p>
+          </div>
+          <div class="dfu-faq-card">
+            <div class="dfu-faq-card__num">問題8</div>
+            <div class="dfu-faq-card__question">航班資料如有修改怎麼辦？</div>
+            <p class="dfu-faq-card__answer">
+              A：訂單送出後無法修改。如有訂單問題，請聯繫<a href="https://www.everrich.com/tw/contact-us" target="_blank">客服人員</a>，將有專人為您服務。
+            </p>
+          </div>
+          <div class="dfu-faq-card">
+            <div class="dfu-faq-card__num">問題9</div>
+            <div class="dfu-faq-card__question">請問商品訂錯或不滿意可以退換貨嗎？</div>
+            <p class="dfu-faq-card__answer">
+              A：本網站不提供退換貨的服務。當您於取貨櫃台取貨時，現場服務人員將與您一一確認商品狀況，如發現商品有問題請立即反應。若有更進一步的問題，請聯繫<a
+                href="https://www.everrich.com/tw/contact-us" target="_blank">客服人員</a>。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================
+       SECTION 8: More Products 更多推薦商品
+       自動由左往右滾動，商品圖帶超連結開新分頁
+  ====================================================== -->
+    <section aria-labelledby="dfu-products-title" class="dfu-section dfu-section--products dfu-products">
+      <div class="dfu-container">
+        <div class="dfu-products__header">
+          <div class="dfu-section-title-wrap">
+            <h2 class="dfu-section-title" id="dfu-products-title">更多<span class="dfu-section-title__yellow">推薦商品</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+      <!-- 滾動軌道不需 container 限制，讓其全寬 -->
+      <div aria-label="更多推薦商品自動捲動列表" class="dfu-products__track-wrapper">
+        <div class="dfu-products__track" role="list">
+          <!-- 商品 1 -->
+          <a class="dfu-product-item"
+            href="https://www.everrich.com/tw/estee-lauder/33907-Advanced-Night-Repair-Synchronized-MultiRecovery-Complex-Duo.html"
+            id="eck-Dutyfreeupgrade-8-item01-x" rel="noopener noreferrer" role="listitem" target="_blank">
+            <div class="dfu-product-item__img-wrap">
+              <img alt="雅詩蘭黛" class="dfu-product-item__img" src="images/m01.png" />
+            </div>
+            <div class="dfu-product-item__name">雅詩蘭黛</div>
+          </a>
+          <!-- 商品 2 -->
+          <a class="dfu-product-item"
+            href="https://www.everrich.com/tw/penhaligon-s/72414-PORTRAITS-LORD-GEORGE-EDP.html"
+            id="eck-Dutyfreeupgrade-8-item02-x" rel="noopener noreferrer" role="listitem" target="_blank">
+            <div class="dfu-product-item__img-wrap">
+              <img alt="潘海利根" class="dfu-product-item__img" src="images/m02.png" />
+            </div>
+            <div class="dfu-product-item__name">潘海利根</div>
+          </a>
+          <!-- 商品 3 -->
+          <a class="dfu-product-item" href="https://www.everrich.com/tw/sabon/75458-Body-Scrub-Small-PLV-.html"
+            id="eck-Dutyfreeupgrade-8-item03-x" rel="noopener noreferrer" role="listitem" target="_blank">
+            <div class="dfu-product-item__img-wrap">
+              <img alt="SABON" class="dfu-product-item__img" src="images/m03.png" />
+            </div>
+            <div class="dfu-product-item__name">SABON</div>
+          </a>
+          <!-- 商品 4 -->
+          <a class="dfu-product-item" href="https://www.everrich.com/tw/coach/71407-DNM-CARGO-T-26-B4INDIGO-ONE.html"
+            id="eck-Dutyfreeupgrade-8-item04-x" rel="noopener noreferrer" role="listitem" target="_blank">
+            <div class="dfu-product-item__img-wrap">
+              <img alt="COACH" class="dfu-product-item__img" src="images/m04.png" />
+            </div>
+            <div class="dfu-product-item__name">COACH</div>
+          </a>
+          <!-- 商品 5 -->
+          <a class="dfu-product-item" href="https://www.everrich.com/tw/georgjensen/84965-HERITAGE-NECKLACE.html"
+            id="eck-Dutyfreeupgrade-8-item05-x" rel="noopener noreferrer" role="listitem" target="_blank">
+            <div class="dfu-product-item__img-wrap">
+              <img alt="喬治傑生" class="dfu-product-item__img" src="images/m05.png" />
+            </div>
+            <div class="dfu-product-item__name">喬治傑生</div>
+          </a>
+          <!-- 商品 6 -->
+          <a class="dfu-product-item"
+            href="https://www.everrich.com/tw/marshall/60501-Marshall-Acton-III-%E8%97%8D%E7%89%99%E5%96%87%E5%8F%AD-%E7%B6%93%E5%85%B8%E9%BB%91.html"
+            id="eck-Dutyfreeupgrade-8-item06-x" rel="noopener noreferrer" role="listitem" target="_blank">
+            <div class="dfu-product-item__img-wrap">
+              <img alt="Marshall" class="dfu-product-item__img" src="images/m06.png" />
+            </div>
+            <div class="dfu-product-item__name">Marshall</div>
+          </a>
+          <!-- 商品 7 -->
+          <a class="dfu-product-item"
+            href="https://www.everrich.com/tw/skii/79841-SKII-INFINITAURA-CARE-ESSENTIALS-COLLECTION.html"
+            id="eck-Dutyfreeupgrade-8-item07-x" rel="noopener noreferrer" role="listitem" target="_blank">
+            <div class="dfu-product-item__img-wrap">
+              <img alt="SK-II" class="dfu-product-item__img" src="images/m07.png" />
+            </div>
+            <div class="dfu-product-item__name">SK-II</div>
+          </a>
+          <!-- 商品 8 -->
+          <a class="dfu-product-item"
+            href="https://www.everrich.com/tw/diptyque/69343-LEau-Papier-Eau-de-Toilette-100ML.html"
+            id="eck-Dutyfreeupgrade-8-item08-x" rel="noopener noreferrer" role="listitem" target="_blank">
+            <div class="dfu-product-item__img-wrap">
+              <img alt="diptyque" class="dfu-product-item__img" src="images/m08.png" />
+            </div>
+            <div class="dfu-product-item__name">diptyque</div>
+          </a>
+        </div><!-- /.dfu-products__track -->
+      </div><!-- /.dfu-products__track-wrapper -->
+    </section>
+    <!-- ── Sidebar 選單本體（桌機版：右側抽屜；手機版：底部 bar） ── -->
+    <div id="dfu-sidebar">
+      <nav aria-label="頁面快速導覽" class="dfu-menu">
+        <img alt="昇恆昌" src="images/sidenav-logo.png" />
+        <div class="dfu-menu__style">
+          <ul>
+            <li><a href="#dfu-benefits-title" id="eck-Dutyfreeupgrade-9-menu_benefits-x">四大好處</a></li>
+            <li><a href="#dfu-south-bonus" id="eck-Dutyfreeupgrade-9-menu_southbonus-x">中南部加碼優惠</a></li>
+            <li><a href="#dfu-preorder-title" id="eck-Dutyfreeupgrade-9-menu_preorder-x">預訂流程</a></li>
+            <li><a href="#dfu-guide-title" id="eck-Dutyfreeupgrade-9-menu_guide-x">購物攻略</a></li>
+            <li><a href="#dfu-mustbuy-title" id="eck-Dutyfreeupgrade-9-menu_mustbuy-x">必買清單</a></li>
+            <li><a href="#dfu-locations-title" id="eck-Dutyfreeupgrade-9-menu_locations-x">取貨地點</a></li>
+            <li><a href="#dfu-faq-title" id="eck-Dutyfreeupgrade-9-menu_faq-x">常見問題</a></li>
+            <li><a href="#dfu-products-title" id="eck-Dutyfreeupgrade-9-menu_products-x">推薦商品</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- ── Toggle 按鈕（完全獨立，桌機右側 tab / 手機右下角 tab） ── -->
+    <button aria-expanded="true" aria-label="開啟導覽" class="dfu-toggle-btn" id="dfu-toggle-btn">
+      <span>開啟導覽</span>
+    </button>
+    <!-- ── To-Top 回頂按鈕 ── -->
+    <button aria-label="回到頂部" class="dfu-toTop" id="dfu-BackTop">TOP</button>
+  </div><!-- /.dfu-wrap -->
+
+  <!-- 台中／高雄機場早鳥限定｜活動辦法 Popup -->
+  <div aria-hidden="true" aria-labelledby="modal-earlybird-rules-title" aria-modal="true"
+    class="dfu-modal" id="modal-earlybird-rules" role="dialog">
+    <div class="dfu-modal-container" data-modal-close>
+      <div class="dfu-modal-card" role="document">
+        <button aria-label="關閉活動辦法" class="dfu-modal-close" data-modal-close type="button">×</button>
+        <header class="dfu-modal-header">
+          <span class="dfu-modal-kicker">活動辦法</span>
+          <h2 class="dfu-modal-title" id="modal-earlybird-rules-title">台中 / 高雄機場早鳥限定</h2>
+          <div aria-hidden="true" class="dfu-modal-divider"></div>
+        </header>
+        <div class="dfu-modal-body">
+          <ol class="dfu-modal-rules">
+            <li>活動期間 2026/07/01 00:00 起至 2026/12/31 23:59 止，以訂單成立時間為準。</li>
+            <li>出境機場為台中或高雄機場的旅客，且最晚須於出發前 7 天（含出發當日）完成預訂。</li>
+            <li>單筆消費達指定門檻即贈 RICH POINT（恕不重複累贈，單筆訂單擇優贈送乙次）：
+              <ul>
+                <li>單筆消費滿 $5,000，贈 RICH POINT 5,555 點。</li>
+                <li>單筆消費滿 $8,000（含）以上，贈 RICH POINT 11,111 點。</li>
+              </ul>
+            </li>
+            <li>本活動期間內參與次數不限，惟每個會員帳號每日限贈乙次（若同日有多筆訂單符合門檻，將以最高門檻之訂單進行派發）。</li>
+            <li>會員帳號須於下單前先完成 RICHCLUB 註冊且綁定手機號碼，方可累點。</li>
+            <li>下單前未完成 RICHCLUB 綁定視同未符合贈送資格，恕無法補贈。</li>
+            <li>點數發送時間：本活動之加贈點數將依「訂單成立月份」分批陸續匯入您的 RICHCLUB 會員帳戶：
+              <ul>
+                <li>2026/07/01 至 10/31 期間之訂單：將於 2027/01/14 起陸續發送。</li>
+                <li>2026/11/01 至 11/30 期間之訂單：將於 2027/02/11 起陸續發送。</li>
+                <li>2026/12/01 至 12/31 期間之訂單：將於 2027/03/12 起陸續發送。</li>
+              </ul>
+            </li>
+            <li>辦理退貨時，該筆消費所累積之年度消費金額及所累積之點數將予以扣除及回收。若會員點數若少於 0 點時，將凍結帳戶並停止相關會員權益，會員需再度消費方可取消凍結並繼續享有相關會員權益。</li>
+            <li>更多 RICHCLUB 會員點數相關折抵使用方式和規定，請詳見會員活動頁說明。</li>
+            <li>本活動贈品【昇恆昌免稅購物網】保留更換其它贈品之權利，且不另行通知。</li>
+            <li>本活動限於【昇恆昌免稅購物網】使用，限【昇恆昌免稅購物網】供預訂之商品，實體賣場無此優惠活動。</li>
+            <li>除上述事項，若有以上說未盡之事宜，主辦單位保留修改活動內容之權利。昇恆昌股份有限公司保留變更或終止本活動之權利。詳細活動辦法以【昇恆昌免稅購物網】網站公告為準，若有異動修改後之活動內容及約定條款將公布於本網站上，不另個別通知。</li>
+          </ol>
+        </div>
+        <footer class="dfu-modal-footer">
+          <button class="dfu-modal-btn dfu-modal-btn--close" data-modal-close type="button">關閉</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
